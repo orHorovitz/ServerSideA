@@ -1,0 +1,43 @@
+http://localhost:3001
+
+testing getting the about
+-------------------------
+url=http://localhost:3001/about/
+data.status_code=200
+[object Object]
+data.text={"developers":[{"firstname":"Or","lastname":"Horovitz","id":316283944,
+"email":"orhorovitz123@gmail.com"},
+{"firstname":"Daniella","lastname":"Boaz","id":209371913,
+"email":"daniellaboaz22@gmail.com"}]}
+[object Object]
+firstname=Or
+lastname=Horovitz
+id=316283944
+Or Horovitz 316283944
+
+
+testing getting the report - 1
+------------------------------
+url=http://localhost:3001/report/?user_id=123123&year=2024&month=3
+data.status_code=200
+[object Object]
+data.text={"breakfast":[],"lunch":[],"dinner":[],"other":[]}
+
+
+
+testing adding calorie consumption
+----------------------------------
+url=http://localhost:3001/addcalories/
+data.status_code=201
+[object Object]
+data.text={"user_id":123123,"year":2024,"month":4,"day":2,"description":"milk 9","category":"lunch","amount":8,"_id":"66780e20bd69ae4393fea508","id":20,"__v":0}
+
+
+testing getting the report - 2
+------------------------------
+url=http://localhost:3001/report/?user_id=123123&year=2024&month=4
+data.status_code=200
+[object Object]
+data.text={"breakfast":[],"lunch":[{"day":2,"description":"milk 9","amount":8},{"day":2,"description":"milk 9","amount":8}],"dinner":[],"other":[]}
+
+
